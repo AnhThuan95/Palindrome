@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Palindrome</title>
+</head>
+<body>
+
+<script>
+    function isPalindrome(word) {
+        let array = [];
+        for (let i = 0; i < word.length; i++) {
+            array[i] = word[i];
+        }
+        if (array.length == 0 || array.length == 1) {
+            alert(true);
+        } else if (array[0] === array[array.length - 1]) {
+            array.pop();
+            array.shift();
+            word = array.join("");
+            return isPalindrome(word);
+        } else {
+            alert(false);
+        }
+    }
+
+    let test = prompt("Nhap vao 1 tu de kiem tra; ");
+    isPalindrome(test);
+
+</script>
+
+</body>
+</html>
